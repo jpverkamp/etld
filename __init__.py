@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from etld import split
+from .etld import split
+

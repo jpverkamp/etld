@@ -7,7 +7,7 @@ import urllib.request
 
 # Paths for the data file this module needs.
 REMOTE_FILE = 'https://mxr.mozilla.org/mozilla-central/source/netwerk/dns/effective_tld_names.dat?raw=1'
-LOCAL_FILE = 'effective_tld_names.dat'
+LOCAL_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'effective_tld_names.dat')
 
 # Three sets of possible TLDs:
 NORMAL_TLDS = set()
