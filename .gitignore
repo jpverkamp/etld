@@ -1,0 +1,7 @@
+# Backup files
+*~
+*.bak
+\#*\#
+
+# This file will automatically be downloaded
+effective_tld_names.dat
