@@ -60,11 +60,11 @@ def split(hostname):
             return (parts[i], '.'.join(parts[i+1:]))
         
         # Process normal TLDs
-        elif tld in NORMAL_TLDS:
+        elif i >= 1 and tld in NORMAL_TLDS:
             return (parts[i-1], tld)
         
         # Process wildcard TLDs
-        elif tld in WILDCARD_TLDS and not prev_tld in SPECIAL_TLDS:
+        elif i >= 2 and tld in WILDCARD_TLDS and not prev_tld in SPECIAL_TLDS:
             return (parts[i-2], prev_tld)
         
     # No matching TLDs
