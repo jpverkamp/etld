@@ -3,7 +3,10 @@
 
 import os
 import sys
-import urllib.request
+try:
+    from urllib.request import urlretrieve
+except ImportError:
+    from urllib import urlretrieve
 
 # Paths for the data file this module needs.
 REMOTE_FILE = 'https://mxr.mozilla.org/mozilla-central/source/netwerk/dns/effective_tld_names.dat?raw=1'
@@ -16,7 +19,7 @@ SPECIAL_TLDS = set()
 
 # Verify that an effective TLD file exists. If not, download it.
 if not os.path.exists(LOCAL_FILE):
-    urllib.request.urlretrieve(REMOTE_FILE, LOCAL_FILE)
+    urlretrieve(REMOTE_FILE, LOCAL_FILE)
 
 # Load the effective TLD file
 with open(LOCAL_FILE) as fin:
